@@ -134,25 +134,35 @@ function hasVisibleFocus(info) {
   );
 
   // ============================================================
-  // TEST 5 — Botão "Baixar PDF" alcançável por teclado
+  // TEST 5 — Barra de ações alcançável por teclado
+  // Ordem: skip-link (1) → seletor de idioma (2) → "Baixar PDF" (3)
   // ============================================================
   // Volta ao topo
   await page.goto(BASE_URL, { waitUntil: 'networkidle' });
 
   await page.keyboard.press('Tab'); // skip-link
-  await page.keyboard.press('Tab'); // ?
-  const second = await focusInfo(page);
+  await page.keyboard.press('Tab'); // seletor de idioma
+  const langSwitch = await focusInfo(page);
 
   record(
-    '2.1.1 · Botão "Baixar PDF" alcançável via Tab (2º elemento)',
-    second && second.cls.includes('action-print'),
-    second ? { tag: second.tag, cls: second.cls, ariaLabel: second.ariaLabel } : null
+    '2.1.1 · Seletor de idioma alcançável via Tab (2º elemento)',
+    langSwitch && langSwitch.cls.includes('action-lang'),
+    langSwitch ? { tag: langSwitch.tag, cls: langSwitch.cls, href: langSwitch.href, ariaLabel: langSwitch.ariaLabel } : null
+  );
+
+  await page.keyboard.press('Tab'); // "Baixar PDF"
+  const printBtn = await focusInfo(page);
+
+  record(
+    '2.1.1 · Botão "Baixar PDF" alcançável via Tab (3º elemento)',
+    printBtn && printBtn.cls.includes('action-print'),
+    printBtn ? { tag: printBtn.tag, cls: printBtn.cls, ariaLabel: printBtn.ariaLabel } : null
   );
 
   record(
     '2.4.7 · Botão "Baixar PDF" tem foco visível',
-    hasVisibleFocus(second),
-    second ? { outline: second.outline, boxShadow: second.boxShadow } : null
+    hasVisibleFocus(printBtn),
+    printBtn ? { outline: printBtn.outline, boxShadow: printBtn.boxShadow } : null
   );
 
   // ============================================================
