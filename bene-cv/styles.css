@@ -655,12 +655,24 @@ ul { padding: 0; margin: 0; list-style: none; }
     box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
   }
 
-  /* Só ícone no mobile: esconde o rótulo de texto.
-     O aria-label de cada botão mantém o nome acessível para leitores de tela. */
-  .action-btn span { display: none; }
+  /* Estilo "tab bar": ícone em cima, rótulo curto embaixo.
+     Touch não tem hover, então o rótulo visível é o que evita ambiguidade
+     (Nielsen #6 — reconhecimento em vez de memorização). O title dos botões
+     cobre o hover no desktop. */
+  .page-actions { gap: var(--space-1); }
   .action-btn {
-    padding: 0.625rem;
+    flex: 1 1 0;            /* dividem a largura da barra igualmente */
+    max-width: 7rem;        /* mas não esticam demais em tablets */
+    flex-direction: column; /* ícone em cima, rótulo embaixo */
+    gap: 0.25rem;
+    padding: 0.4rem 0.5rem;
     box-shadow: none;
+  }
+  .action-btn span {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    line-height: 1.1;
+    white-space: nowrap;
   }
 
   /* Toast de feedback acima da barra (senão sairia fora da tela, abaixo do rodapé) */
