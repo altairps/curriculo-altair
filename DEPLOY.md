@@ -49,3 +49,18 @@ gh workflow run "Deploy to Locaweb (FTP)" --ref main
 > Nunca use `gh secret set FTP_PASSWORD --body "senha"` — isso grava a senha em texto puro no histórico do shell.
 
 Pré-requisito: `gh auth login` feito uma vez, com escopo `repo`.
+
+## Manutenção do workflow
+
+O GitHub deprecia o runtime Node das *actions* antigas (ex.: Node 20 saiu de
+suporte em 2025). Quando aparecer um aviso do tipo _"the following actions target
+Node.js 20 but are being forced to run on Node.js 24"_ nas anotações do run, suba a
+*major* das actions oficiais:
+
+- `actions/checkout` e `actions/setup-node` → **`@v5`** (atual).
+- `node-version` do runner deve ficar **>= 22** (o `html-validate` 11 exige).
+- `SamKirkland/FTP-Deploy-Action` é de terceiro e tem cadência própria (hoje
+  `@v4.3.5`) — não estava no aviso; só atualizar se a própria action avisar.
+
+É só warning, não quebra o deploy — mas manter atualizado evita que vire erro
+quando o runtime forçado for removido.
