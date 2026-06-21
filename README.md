@@ -30,7 +30,7 @@ Se você é alguém procurando emprego e quer um CV que **diga e prove** o que v
 | A11y | WCAG 2.2 AA · ARIA · `prefers-reduced-motion` · `forced-colors` | Auditado, não declarado |
 | Hosting | Apache na Locaweb · `.htaccess` (gzip, cache 1 ano, HSTS) | Barato, estável, suficiente |
 | Analytics | Cloudflare Web Analytics (cookieless) | Sem cookies, **sem banner LGPD**, ~13KB deferido |
-| CI/CD | GitHub Actions → auditoria a11y → FTP automático | Push em `main` = audit roda e, se passar, site no ar |
+| CI/CD | GitHub Actions → auditoria a11y → FTP automático | Push em `main` = audit roda e, se passar, site no ar — ver [DEPLOY.md](DEPLOY.md) |
 | Testes | html-validate · Playwright (teclado) · axe-core | Verificável, não opinião — **barram o deploy se falharem** |
 
 ---
