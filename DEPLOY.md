@@ -60,7 +60,7 @@ Node.js 20 but are being forced to run on Node.js 24"_ nas anotações do run, s
 - `actions/checkout` e `actions/setup-node` → **`@v5`** (atual).
 - `node-version` do runner deve ficar **>= 22** (o `html-validate` 11 exige).
 - `SamKirkland/FTP-Deploy-Action` é de terceiro e tem cadência própria (hoje
-  `@v4.3.5`) — não estava no aviso; só atualizar se a própria action avisar.
+  `@v4.4.0`) — confira releases novas se ela aparecer no aviso de Node.
 
 É só warning, não quebra o deploy — mas manter atualizado evita que vire erro
 quando o runtime forçado for removido.
