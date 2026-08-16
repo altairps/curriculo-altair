@@ -1,5 +1,5 @@
 /* =============================================================
-   Bené Aragão · CV
+   Altair Santos · CV
    HTML5 + CSS3 puro, sem dependências.
    Sistema de tokens via CSS variables · WCAG 2.2 AA validado.
    ============================================================= */
@@ -154,7 +154,6 @@ ul { padding: 0; margin: 0; list-style: none; }
   font-weight: 500;
   line-height: 1;
   cursor: pointer;
-  text-decoration: none;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06);
   transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease, color 0.12s ease;
 }
@@ -352,7 +351,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   text-underline-offset: 2px;
 }
 
-/* W3Cx badge =============================================== */
+/* Positioning badge ========================================= */
 .badge {
   position: relative;
   border: 1px solid var(--accent);
@@ -634,55 +633,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 /* Responsive ================================================ */
 @media (max-width: 768px) {
-  /* padding-bottom extra reserva a altura da barra de ações fixa no rodapé */
-  .page { padding: var(--space-4) var(--space-2) var(--space-8); }
-
-  /* Barra de ações: deixa de flutuar sobre o conteúdo e vira barra fixa
-     no rodapé (zona do polegar), de borda a borda. */
-  .page-actions {
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    justify-content: center;
-    gap: var(--space-2);
-    padding: var(--space-1) var(--space-2);
-    padding-bottom: calc(var(--space-1) + env(safe-area-inset-bottom, 0px));
-    background: color-mix(in srgb, var(--bg) 90%, transparent);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-top: 1px solid var(--border);
-    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
-  }
-
-  /* Estilo "tab bar": ícone em cima, rótulo curto embaixo.
-     Touch não tem hover, então o rótulo visível é o que evita ambiguidade
-     (Nielsen #6 — reconhecimento em vez de memorização). O title dos botões
-     cobre o hover no desktop. */
-  .page-actions { gap: var(--space-1); }
-  .action-btn {
-    flex: 1 1 0;            /* dividem a largura da barra igualmente */
-    max-width: 7rem;        /* mas não esticam demais em tablets */
-    flex-direction: column; /* ícone em cima, rótulo embaixo */
-    gap: 0.25rem;
-    padding: 0.4rem 0.5rem;
-    box-shadow: none;
-  }
-  .action-btn span {
-    font-size: 0.6875rem;
-    font-weight: 500;
-    line-height: 1.1;
-    white-space: nowrap;
-  }
-
-  /* Toast de feedback acima da barra (senão sairia fora da tela, abaixo do rodapé) */
-  .action-feedback {
-    top: auto;
-    bottom: calc(100% + var(--space-1));
-    right: 50%;
-    transform: translate(50%, 4px);
-  }
-  .action-feedback.is-visible { transform: translate(50%, 0); }
+  .page { padding: var(--space-4) var(--space-2); }
 
   .header__name { font-size: var(--text-xl); }
   .header__nickname { font-size: var(--text-base); }
@@ -847,7 +798,7 @@ ul { padding: 0; margin: 0; list-style: none; }
   .plain-list { gap: 2pt; }
   .plain-list li { line-height: 1.3; }
 
-  /* Selo W3Cx compacto mas visível */
+  /* Badge compacto mas visível */
   .badge {
     border: 1.2pt solid var(--accent);
     background: #F4F4F4;
@@ -925,4 +876,3 @@ ul { padding: 0; margin: 0; list-style: none; }
   a:visited { color: VisitedText; }
   :focus-visible { outline: 2px solid Highlight; outline-offset: 2px; }
 }
-
