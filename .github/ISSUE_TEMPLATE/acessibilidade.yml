@@ -19,7 +19,7 @@ body:
     id: local
     attributes:
       label: Onde na página?
-      description: Seção ou elemento (ex.: cabeçalho, selo W3Cx, links de contato, botão Baixar PDF).
+      description: Seção ou elemento (ex.: cabeçalho, badge de posicionamento, links de contato, botão Baixar PDF).
     validations:
       required: false
   - type: dropdown
@@ -59,7 +59,7 @@ body:
     attributes:
       label: Passos para reproduzir (opcional)
       placeholder: |
-        1. Abra https://benearagao.com.br
+        1. Abra https://altair.work
         2. Pressione Tab até o link de contato
         3. ...
     validations:

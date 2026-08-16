@@ -62,6 +62,14 @@ node tests/regen-og.js
 
 Isso recria `altair-cv/assets/og-image.png` em 1200x630.
 
+## Publicar
+
+O deploy usa GitHub Pages via GitHub Actions. No primeiro setup, configure **Settings → Pages → Build and deployment → Source → GitHub Actions** no repositório.
+
+Depois, cada `push` na `main` roda a auditoria e publica a pasta `altair-cv/`.
+
+Veja [DEPLOY.md](./DEPLOY.md).
+
 ## Conteúdo
 
 Para adaptar este projeto ao seu próprio currículo, comece extraindo uma base estruturada a partir de um CV existente, LinkedIn, portfólio ou histórico profissional. Você pode usar sua ferramenta de IA preferida para transformar esse material em um briefing claro antes de editar o HTML.
