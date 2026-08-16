@@ -111,6 +111,8 @@ ul { padding: 0; margin: 0; list-style: none; }
 
 .muted { color: var(--ink-tertiary); }
 
+.is-hidden { display: none !important; }
+
 /* Skip link ================================================= */
 .skip-link {
   position: absolute;
