@@ -10,7 +10,7 @@ Este projeto foi adaptado a partir do repositório open-source de Bené Aragão,
 
 ```text
 .
-├── bene-cv/
+├── altair-cv/
 │   ├── index.html          # Versão PT-BR
 │   ├── en/index.html       # Versão EN
 │   ├── styles.css          # Tokens, layout, responsivo, print e a11y
@@ -25,14 +25,13 @@ Este projeto foi adaptado a partir do repositório open-source de Bené Aragão,
 │   ├── keyboard.spec.js
 │   ├── regen-og.js
 │   └── package.json
-├── MEU-CV-DADOS-PTBR.md
-└── MY-CV-DATA-EN.md
+└── README.md
 ```
 
 ## Rodar localmente
 
 ```bash
-cd bene-cv
+cd altair-cv
 python3 -m http.server 4321
 ```
 
@@ -55,22 +54,41 @@ O script `test:html` valida as duas páginas. Os testes de teclado e axe usam a 
 
 ## Gerar Open Graph
 
-Depois de editar `bene-cv/assets/og-image.svg`:
+Depois de editar `altair-cv/assets/og-image.svg`:
 
 ```bash
 node tests/regen-og.js
 ```
 
-Isso recria `bene-cv/assets/og-image.png` em 1200x630.
+Isso recria `altair-cv/assets/og-image.png` em 1200x630.
 
 ## Conteúdo
 
-O conteúdo do CV foi estruturado a partir de:
+Para adaptar este projeto ao seu próprio currículo, comece extraindo uma base estruturada a partir de um CV existente, LinkedIn, portfólio ou histórico profissional. Você pode usar sua ferramenta de IA preferida para transformar esse material em um briefing claro antes de editar o HTML.
 
-- `MEU-CV-DADOS-PTBR.md`
-- `MY-CV-DATA-EN.md`
+Prompt sugerido:
 
-O telefone foi omitido da versão pública conforme briefing.
+```text
+Com base no currículo, LinkedIn, portfólio e informações profissionais abaixo, gere um briefing estruturado para adaptar um currículo web.
+
+Inclua:
+- identidade profissional;
+- headline curta;
+- resumo profissional em 3 a 5 linhas;
+- destaques rápidos com resultados mensuráveis;
+- skills agrupadas por tema;
+- experiências recentes com responsabilidades, impacto e stack;
+- projetos selecionados;
+- trajetória anterior;
+- formação;
+- certificações;
+- idiomas;
+- SEO: título, descrição curta e palavras-chave.
+
+Seja factual. Não invente métricas. Quando algo estiver incerto, marque como "confirmar". Gere também uma versão em inglês profissional, natural e sem tradução literal.
+```
+
+Depois, substitua o conteúdo em `altair-cv/index.html` e `altair-cv/en/index.html`, revisando metadados, links, Open Graph, sitemap e textos de acessibilidade.
 
 ## Crédito
 

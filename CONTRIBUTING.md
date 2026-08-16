@@ -24,7 +24,7 @@ Não precisa ter certeza de que é um bug "oficial". Se pareceu errado pra você
 ### 2. Enviar uma correção (Pull Request)
 
 1. Faça **fork** e crie uma branch (`git checkout -b fix/descricao-curta`).
-2. Faça a alteração em `bene-cv/` (`index.html` / `styles.css`).
+2. Faça a alteração em `altair-cv/` (`index.html` / `styles.css`).
 3. **Rode a suíte** e garanta que está verde (veja abaixo).
 4. Abra o PR descrevendo o **antes/depois** e, se aplicável, o critério WCAG atendido.
 
@@ -36,7 +36,7 @@ A mesma suíte que roda no CI e **bloqueia o deploy** se algo regredir:
 
 ```bash
 # 1. Servir o site
-cd bene-cv && python3 -m http.server 4321 &
+cd altair-cv && python3 -m http.server 4321 &
 
 # 2. Rodar a suíte: html-validate + navegação por teclado + axe-core
 cd ../tests && npm install
@@ -54,7 +54,7 @@ Comandos individuais: `npm run test:html`, `npm run test:keyboard`, `npm run tes
 
 - **Alvo:** WCAG 2.2 nível AA (com itens AAA pontuais).
 - **Regra nº 1 do ARIA:** prefira HTML nativo a ARIA sempre que possível.
-- **Evidência, não afirmação:** se uma mudança afeta um critério, atualize o mapeamento em [`bene-cv/ACCESSIBILITY.md`](./bene-cv/ACCESSIBILITY.md) e mantenha os números **honestos** (contraste medido, não estimado).
+- **Evidência, não afirmação:** se uma mudança afeta um critério, atualize o mapeamento em [`altair-cv/ACCESSIBILITY.md`](./altair-cv/ACCESSIBILITY.md) e mantenha os números **honestos** (contraste medido, não estimado).
 - **Sem build, sem framework, zero dependências em runtime** — mudanças que quebrem isso provavelmente não serão aceitas; é uma decisão de projeto, não um descuido.
 - Mexeu em `styles.css`? Atualize o cache busting `?v=YYYYMMDD` no `<link>` do `index.html`.
 

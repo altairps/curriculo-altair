@@ -25,16 +25,16 @@ Abrir:
 - `assets/favicon.svg` usa as iniciais `AS`.
 - `assets/og-image.svg` é a fonte editável do preview social.
 - `assets/og-image.png` é gerado por `../tests/regen-og.js`.
-- `assets/profile.jpg` ainda é um arquivo herdado do template e não é usado no HTML atual.
+- `assets/profile.jpg` é a foto usada no avatar do CV.
 
 ## Publicação
 
-Publicar a pasta `bene-cv/` como raiz do site em `altair.work`.
+Publicar a pasta `altair-cv/` como raiz do site em `altair.work`.
 
 Em serviços como Netlify, Vercel, Cloudflare Pages ou GitHub Pages:
 
 - build command: vazio
-- publish directory: `bene-cv`
+- publish directory: `altair-cv`
 
 ## Validação
 

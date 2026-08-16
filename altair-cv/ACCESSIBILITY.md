@@ -26,7 +26,7 @@ Checklist de acessibilidade do CV web de Altair Santos.
 Rodar o servidor local:
 
 ```bash
-cd bene-cv
+cd altair-cv
 python3 -m http.server 4321
 ```
 

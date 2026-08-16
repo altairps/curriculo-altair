@@ -3,7 +3,7 @@
 **Produto:** Currículo digital Bené Aragão — <https://benearagao.com.br>
 **Data:** 2026-06-01
 **Norma de referência:** WCAG 2.2, nível AA (com itens AAA pontuais)
-**Escopo:** página única `bene-cv/index.html` + `styles.css`
+**Escopo:** página única `altair-cv/index.html` + `styles.css`
 **Resultado:** ✅ Conforme AA — 0 violações automatizadas, achados manuais resolvidos
 
 ---
@@ -21,7 +21,7 @@
 **Reproduzir tudo:**
 
 ```bash
-cd bene-cv && python3 -m http.server 4321 &   # serve o site
+cd altair-cv && python3 -m http.server 4321 &   # serve o site
 cd tests && npm ci && npx playwright install --with-deps chromium
 BASE_URL=http://localhost:4321/ npm test       # html + teclado + axe
 ```

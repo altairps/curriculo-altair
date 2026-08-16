@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'bene-cv/**'
+      - 'altair-cv/**'
       - 'tests/**'
       - '.github/workflows/deploy.yml'
   pull_request:
     paths:
-      - 'bene-cv/**'
+      - 'altair-cv/**'
       - 'tests/**'
   workflow_dispatch:
 
@@ -36,7 +36,7 @@ jobs:
 
       - name: Servir o site estático
         run: |
-          python3 -m http.server 4321 --directory bene-cv &
+          python3 -m http.server 4321 --directory altair-cv &
           npx --yes wait-on http://localhost:4321/
 
       - name: Rodar suite (teclado + axe-core)
@@ -60,7 +60,7 @@ jobs:
           server: ftp.benearagao.com.br
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./bene-cv/
+          local-dir: ./altair-cv/
           server-dir: /public_html/
           exclude: |
             **/.git*

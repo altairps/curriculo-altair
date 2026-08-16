@@ -8,14 +8,14 @@ O site é publicado **automaticamente**. Você quase nunca precisa fazer nada ma
 git push origin main
 ```
 
-Todo `push` na `main` que toque `bene-cv/**` ou `tests/**` dispara o workflow
+Todo `push` na `main` que toque `altair-cv/**` ou `tests/**` dispara o workflow
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), que:
 
 1. **Audita acessibilidade** (`tests/`: html-validate + teclado + axe-core). É um
    _gate_ — se a a11y reprovar, **não publica**.
-2. **Sobe por FTP** a pasta `bene-cv/` inteira para `/public_html/` na Locaweb
+2. **Sobe por FTP** a pasta `altair-cv/` inteira para `/public_html/` na Locaweb
    (action `SamKirkland/FTP-Deploy-Action`). Como é sync de diretório, qualquer
-   arquivo/pasta novo (ex.: `bene-cv/en/`) vai junto sem editar nada.
+   arquivo/pasta novo (ex.: `altair-cv/en/`) vai junto sem editar nada.
 
 > O `deploy-locaweb.sh` é só um fallback manual. A fonte de verdade é o workflow.
 

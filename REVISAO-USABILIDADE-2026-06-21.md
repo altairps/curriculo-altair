@@ -3,7 +3,7 @@
 **Produto:** Currículo digital Bené Aragão — <https://benearagao.com.br> (PT + `/en/`)
 **Data:** 2026-06-21
 **Referência:** *10 Usability Heuristics for User Interface Design* (Jakob Nielsen, NN/g)
-**Escopo:** `bene-cv/index.html`, `bene-cv/en/index.html`, `styles.css` e o JS de compartilhar
+**Escopo:** `altair-cv/index.html`, `altair-cv/en/index.html`, `styles.css` e o JS de compartilhar
 **Resultado:** ✅ Conforme — 1 achado relevante corrigido (affordance de ícone no mobile), demais heurísticas sem ação obrigatória
 
 > Complementa o [Relatório de Acessibilidade](AUDITORIA-A11Y-2026-06-01.md) (WCAG 2.2 AA). Usabilidade e acessibilidade se sobrepõem, mas não são a mesma coisa: aqui o foco é a clareza percebida pelo usuário, não a conformidade técnica.
@@ -54,7 +54,7 @@
 A usabilidade não tem scanner automático equivalente ao axe, mas estes checks dão cobertura prática:
 
 ```bash
-cd bene-cv && python3 -m http.server 4321 &
+cd altair-cv && python3 -m http.server 4321 &
 cd tests && npm test            # html-validate + teclado + axe (não quebrar a base)
 ```
 
