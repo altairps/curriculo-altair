@@ -6,6 +6,8 @@ CV web estático em **HTML5 + CSS3 puro**, com versões em português e inglês,
 
 Este projeto foi adaptado a partir do repositório open-source de Bené Aragão, preservando a proposta original: um currículo web que também funciona como peça de portfólio técnico.
 
+![Open Graph](altair-cv/assets/og-image.png)
+
 ## Estrutura
 
 ```text
